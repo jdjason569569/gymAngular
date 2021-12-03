@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <form [formGroup]="formClient">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese nombre">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Apelido</label>
+                    <input type="text" class="form-control" formControlName="apellido" placeholder="Ingrese apellido">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Correo</label>
+                    <input type="text" class="form-control" formControlName="correo" placeholder="Ingrese correo">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Cedula</label>
+                    <input type="text" class="form-control" formControlName="cedula" placeholder="Ingrese cedula">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Telefono</label>
+                    <input type="tel" class="form-control" formControlName="telefono" placeholder="Ingrese telefono">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Ingrese fecha de nacimiento">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <input type="file" (change)="uploadFile($event)" class="form-control-file" formControlName="imgUrl" placeholder="Agregue imagen">
+                </div>
+            </div>
+            <div class="clo-sm-12">
+                <progressbar [value]="porcentajeSubida" type="warning" [striped]="true">{{porcentajeSubida}}%</progressbar>
+            </div>
+
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="agregar()"> Agregar</button>
+    </form>
+</div>
