@@ -19,6 +19,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AgregarClienteComponent } from './agregar-cliente/agregar-cliente.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { MensajesService } from './services/mensajes.service';
+import { PreciosComponent } from './precios/precios.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     LoginComponent,
     EncabezadoComponent,
     ListadoClientesComponent,
-    AgregarClienteComponent
+    AgregarClienteComponent,
+    PreciosComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     ProgressbarModule.forRoot(),
     AngularFireStorageModule
   ],
-  providers: [AngularFireAuth, AngularFirestore],
+  providers: [AngularFireAuth, AngularFirestore, MensajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

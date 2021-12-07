@@ -31,12 +31,12 @@
                     <input type="tel" class="form-control" formControlName="telefono" placeholder="Ingrese telefono">
                 </div>
             </div>
-            <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
                 <div class="form-group">
                     <label for="">Fecha de nacimiento</label>
                     <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Ingrese fecha de nacimiento">
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-12">
                 <div class="form-group">
                     <input type="file" (change)="uploadFile($event)" class="form-control-file" formControlName="imgUrl" placeholder="Agregue imagen">
@@ -48,6 +48,7 @@
 
         </div>
         <br>
-        <button class="btn btn-primary" (click)="agregar()"> Agregar</button>
+        <button *ngIf="!esEditable" class="btn btn-primary" (click)="agregar()"> Agregar</button>
+        <button *ngIf="esEditable" class="btn btn-primary" (click)="editar()"> Editar</button>
     </form>
 </div>
