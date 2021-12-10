@@ -23,7 +23,7 @@ import { MensajesService } from './services/mensajes.service';
 import { PreciosComponent } from './precios/precios.component';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { SeleccionarClienteComponent } from './seleccionar-cliente/seleccionar-cliente.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import { SeleccionarClienteComponent } from './seleccionar-cliente/seleccionar-c
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     ProgressbarModule.forRoot(),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule
   ],
   providers: [AngularFireAuth, AngularFirestore, MensajesService],
   bootstrap: [AppComponent]
