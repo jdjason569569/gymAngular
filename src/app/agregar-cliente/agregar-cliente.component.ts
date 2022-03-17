@@ -61,7 +61,8 @@ export class AgregarClienteComponent implements OnInit {
   agregar(){
     this.formClient.value.imgUrl = this.urlImagen;
     //this.formClient.value.fechaNacimiento = new Date(this.formClient.value.fechaNacimiento);
-    this.afs.collection('clientes').add(this.formClient.value).then((end)=>{
+    this.afs.collection('clientes').add(this.formClient.value).then((response: any)=>{
+      console.log('respuesta de agregar cliente',response)
       this.mensajesService.mensajeOk('Agregar', 'Se agrego correctamente');
       this.router.navigate(['/listado-clientes']);
     }).catch((error)=>{

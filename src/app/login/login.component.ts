@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //user: jdjason569@gmail.com     pass: holamundo 
+
   login() {
     this.auth4.signInWithEmailAndPassword(this.formLogin.get('email')?.value, this.formLogin.get('password')?.value )
     .then(user =>{
-      console.log('usuario resuktado', user);
+      console.log('usuario resultado', user);
         })
+        .catch(err => console.log('Error ->', err));
   }
-
 }
